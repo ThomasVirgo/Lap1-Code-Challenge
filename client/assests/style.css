@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 *{
    box-sizing: border-box; 
 }
@@ -9,7 +10,17 @@ body{
     height: 100vh;
 }
 
+h1{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 5em;
+    margin: 25px;
+}
 
+input[type="search"]{
+    font-size: 24px;
+    border-color: rgb(187, 187, 187);
+    border-radius: 25px;
+}
 
 .centerPage{
     display: flex;
@@ -29,6 +40,8 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
     height: auto;
     width: 20vw;
+    margin: 15px;
 }
