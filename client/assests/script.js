@@ -30,23 +30,22 @@ function createResultEntry(result){
     let title = document.createElement('h2');
     title.className = 'result-title';
     title.textContent = result.title;
-
-    //IMAGE
-    let image = document.createElement('img');
-    image.className = 'result-image';
-    if (result.thumbnail){
-      image.setAttribute("src", result.thumbnail);  
-    }
+    div.appendChild(title);
     
     //DESCRIPTION
     let description = document.createElement('p');
     description.className = 'result-description';
     description.textContent = result.description;
-
-    //APPEND TO CONTAINER
-    div.appendChild(title);
-    div.appendChild(image);
     div.appendChild(description);
+
+    //IMAGE
+    
+    if (result.thumbnail){
+        let image = document.createElement('img');
+        image.className = 'result-image';
+        image.setAttribute("src", result.thumbnail);  
+        div.appendChild(image);
+    }
 
     //APPEND CONTAINER TO RESULTS CONTAINER
     results.appendChild(div);
