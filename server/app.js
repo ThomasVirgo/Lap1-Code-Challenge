@@ -18,7 +18,7 @@ app.get('/:search', async (req,res) => {
 })
 
 async function googleSearch(searchTerm){
-    let maxChars = 100;
+    let maxChars = 500;
     const rawSearchString = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${searchTerm}&gsrlimit=10&prop=pageimages|extracts&exchars=${maxChars}&exintro&explaintext&exlimit=max&format=json&origin=*`;
     const searchString = encodeURI(rawSearchString);
     let response = await fetch(searchString);

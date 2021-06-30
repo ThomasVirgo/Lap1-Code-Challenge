@@ -17,11 +17,39 @@ async function getSearchResults(event){
 }
 
 function addResults(resultsArray){
-    resultsArray.forEach(item => {
-        let el = document.createElement('h3');
-        el.innerHTML = item.title;
-        results.appendChild(el);
-    })
+    results.innerHTML = ''; //clear previous results
+    resultsArray.forEach(result => createResultEntry(result));
+}
+
+function createResultEntry(result){
+    //CONTAINER
+    let div = document.createElement('div');
+    div.className = 'result';
+
+    //TITLE
+    let title = document.createElement('h2');
+    title.className = 'result-title';
+    title.textContent = result.title;
+
+    //IMAGE
+    let image = document.createElement('img');
+    image.className = 'result-image';
+    if (result.thumbnail){
+      image.setAttribute("src", result.thumbnail);  
+    }
+    
+    //DESCRIPTION
+    let description = document.createElement('p');
+    description.className = 'result-description';
+    description.textContent = result.description;
+
+    //APPEND TO CONTAINER
+    div.appendChild(title);
+    div.appendChild(image);
+    div.appendChild(description);
+
+    //APPEND CONTAINER TO RESULTS CONTAINER
+    results.appendChild(div);
 }
 
 function openNewPage(){
