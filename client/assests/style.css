@@ -45,3 +45,22 @@ input[type="search"]{
     width: 20vw;
     margin: 15px;
 }
+
+.resultsContainer{
+    width: 100%;
+    height: 100vh;
+}
+
+.resultsRows{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 10vh;
+    /* padding: 25px 25px; */
+}
+
+.resultsItem{
+    display:block;
+    width: 100%;
+}
+
